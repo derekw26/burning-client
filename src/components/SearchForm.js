@@ -32,11 +32,11 @@ class SearchForm extends Component {
       <div>
         <form onSubmit={ this._handleSubmit }>
           <label>
-            To:
+            From:
             <input name="origin" onChange={ this._handleInput } type="text" required placeholder="e.g. Sydney"/>
           </label>
           <label>
-            From:
+            To:
             <input name="destination" onChange={ this._handleInput } type="text" required placeholder="e.g. Los Angeles"/>
           </label>
           <input type="submit" value="Save" />

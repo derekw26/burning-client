@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import SearchForm from './SearchForm'
 import SearchDisplay from './SearchDisplay'
+
+const FLIGHTS_URL = "http://localhost:3000/flights.json";
 
 class Search extends Component {
   constructor() {
@@ -10,15 +14,20 @@ class Search extends Component {
         origin: '',
         destination: ''
       }
-    };
+    }
   }
 
-  fetchQuery = (search) => {
+  componentDidMount() {
+    axios.get(FLIGHTS_URL).then((response) => {
+      console.log(response.data)
+    })
+  }
 
+  fetchQuery = (q) => {
     this.setState({
       query: {
-        origin: search.origin,
-        destination: search.destination
+        origin: q.origin,
+        destination: q.destination
       }
     })
   }
@@ -28,7 +37,7 @@ class Search extends Component {
       <div>
         <h1>Search for Flights</h1>
         <SearchForm onSubmit={ this.fetchQuery }/>
-        <SearchDisplay searchInfo={ this.state.query }/>
+        <SearchDisplay query={ this.state.query }/>
       </div>
     )
   }
