@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import './Res.css';
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+
 
 
 const FLIGHT_SERVER_URL = 'http://localhost:3000/flights.json';
@@ -28,7 +30,7 @@ class Reservations extends React.Component {
     }
   }
 
-  
+
 
   onClickData(seat) {
     if(this.state.seatReserved.indexOf(seat) > -1 ) {
