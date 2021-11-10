@@ -3,6 +3,9 @@ import axios from 'axios';
 
 import PlaneForm from './PlaneForm'
 import PlaneDisplay from './PlaneDisplay'
+import axios from 'axios';
+
+const SERVER_URL = 'http://localhost:3000/planes.json';
 
 const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
 
