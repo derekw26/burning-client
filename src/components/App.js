@@ -1,14 +1,31 @@
 import Plane from './Plane'
 import Flight from './Flight'
 import Search from './Search'
+import Reservations from './Reservations'
+import Navbar from './Navbar'
+
+
+import {BrowserRouter as Router , Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Plane />
-      <Flight />
-      <Search />
+
+    <Router>
+         <Navbar/>
+
+   <Routes>
+        <Route path = "/"  element={<Search/>} />
+        <Route path = "/flights"  element={<Flight/>} />
+
+
+</Routes>
+      </Router>
+
+
     </div>
+
+
   );
 }
 

@@ -13,6 +13,7 @@ class Reservations extends React.Component {
   constructor() {
     super();
       this.state = {
+        flight_id: 2,
       seat: [
         'Front1','Front2','Front3',
         'Middle1','Middle2','Middle3',
@@ -26,6 +27,8 @@ class Reservations extends React.Component {
       seatReserved: []
     }
   }
+
+  
 
   onClickData(seat) {
     if(this.state.seatReserved.indexOf(seat) > -1 ) {
