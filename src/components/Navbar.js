@@ -9,7 +9,6 @@ class Navbar extends Component{
         <ul>
             <Link to="/"><li>Home</li></Link>
             <Link to="/flights"><li>Flights</li></Link>
-            <Link to="/Search"><li> Book Now</li></Link>
 
 
         </ul>
@@ -20,5 +19,7 @@ class Navbar extends Component{
     )
   }
 }
+
+
 
 export default Navbar;
