@@ -17,6 +17,7 @@ function App() {
    <Routes>
         <Route path = "/"  element={<Search/>} />
         <Route path = "/flights"  element={<Flight/>} />
+        <Route path = "/planes"  element={<Plane/>} />
 
 
 </Routes>
