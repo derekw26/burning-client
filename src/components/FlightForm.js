@@ -12,7 +12,8 @@ class FlightForm extends Component {
       date: '',
       origin: '',
       destination: '',
-      plane: ''
+      airplane_id: '',
+      planeOptions: []
     };
 
     this._handleInput = this._handleInput.bind(this);
@@ -34,16 +35,14 @@ class FlightForm extends Component {
     this.props.onSubmit(this.state);
   }
 
+  componentDidMount() {
+    axios(AIRPLANES_URL).then((response) => {
+      let planes = response.data.map( (plane, i) => (<option key={i} value={ plane.id }>{ plane.name }</option>) );
+      this.setState({planeOptions: planes });
+    });
+  }
 
   render() {
-
-    let planeOptions = [];
-
-    axios(AIRPLANES_URL).then((response) => {
-      let planes = response.data;
-      planeOptions = planes.map( (plane, i) => (<option key={i} value={ plane.id }>{ plane.name }</option>) );
-      console.log(planeOptions);
-    });
 
     return (
       <form onSubmit={ this._handleSubmit }>
@@ -65,9 +64,9 @@ class FlightForm extends Component {
         </label>
         <label>
           Plane:
-          <select name="plane" onChange={ this._handleInput } type="text">
-           { planeOptions }
-           // not displaying due to async axios function 
+          <select name="airplane_id" onChange={ this._handleInput } type="text" required >
+            <option></option>
+            { this.state.planeOptions }
           </select>
         </label>
         <input type="submit" value="Save" />
