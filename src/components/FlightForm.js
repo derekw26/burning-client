@@ -42,11 +42,11 @@ class FlightForm extends Component {
           <input name="date" onChange={ this._handleInput } type="date" required placeholder="e.g. 23/06/2021"/>
         </label>
         <label>
-          To:
+          From:
           <input name="origin" onChange={ this._handleInput } type="text" required placeholder="e.g. Sydney"/>
         </label>
         <label>
-          From:
+          To:
           <input name="destination" onChange={ this._handleInput } type="text" required placeholder="e.g. Los Angeles"/>
         </label>
         <label>

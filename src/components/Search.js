@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import SearchForm from './SearchForm'
-import SearchDisplay from './SearchDisplay'
+import SearchForm from './SearchForm';
+import SearchDisplay from './SearchDisplay';
 
 const FLIGHTS_URL = "http://localhost:3000/flights.json";
 
@@ -10,6 +10,7 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
+      flights: [],
       query: {
         origin: '',
         destination: ''
@@ -19,7 +20,10 @@ class Search extends Component {
 
   componentDidMount() {
     axios.get(FLIGHTS_URL).then((response) => {
-      console.log(response.data)
+      const flights = response.data;
+      console.log(flights)
+      this.setState({flights: flights});
+      // gets all the flight JSON data from server to display
     })
   }
 
@@ -33,11 +37,12 @@ class Search extends Component {
   }
 
   render() {
+
     return (
       <div>
         <h1>Search for Flights</h1>
         <SearchForm onSubmit={ this.fetchQuery }/>
-        <SearchDisplay query={ this.state.query }/>
+        <SearchDisplay flights={ this.state.flights } query={ this.state.query }/>
       </div>
     )
   }

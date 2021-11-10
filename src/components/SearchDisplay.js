@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
-
-
+import SearchDisplayRow from './SearchDisplayRow';
 
 class SearchDisplay extends Component {
 
   constructor() {
       super();
-      this.state = {
-        flights: []
-      }
     }
-
 
   render() {
 
     const rows = [];
+    const flights = this.props.flights;
+    const query = this.props.query;
+
+    flights.forEach((flight) => {
+
+      if ( (query.origin === flight.origin && query.destination === flight.destination) ||
+      (query.origin === flight.origin && query.destination === '') ||
+      (query.origin === '' && query.destination === flight.destination) ) {
+        rows.push(
+          <SearchDisplayRow
+            flight_number={flight.number}
+            origin={flight.origin}
+            destination={flight.destination}
+            date={flight.date}
+            plane={flight.airplane.name}
+          />
+        );
+      }
+    });
 
     return (
       <table>
@@ -27,7 +41,7 @@ class SearchDisplay extends Component {
             <th>Plane</th>
           </tr>
         </thead>
-        <tbody>{ rows }</tbody>
+        <tbody> { rows } </tbody>
       </table>
     );
   }
