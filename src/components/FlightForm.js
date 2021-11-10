@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
+
 
 class FlightForm extends Component {
   constructor() {
     super();
     this.state = {
-      flight_no: '',
+      number: '',
       date: '',
       origin: '',
       destination: '',
@@ -30,12 +34,22 @@ class FlightForm extends Component {
     this.props.onSubmit(this.state);
   }
 
+
   render() {
+
+    let planeOptions = [];
+
+    axios(AIRPLANES_URL).then((response) => {
+      let planes = response.data;
+      planeOptions = planes.map( (plane, i) => (<option key={i} value={ plane.id }>{ plane.name }</option>) );
+      console.log(planeOptions);
+    });
+
     return (
       <form onSubmit={ this._handleSubmit }>
         <label>
           Flight Number:
-          <input name="flight_no" onChange={ this._handleInput } type="number" required placeholder="e.g. 24"/>
+          <input name="number" onChange={ this._handleInput } type="number" required placeholder="e.g. 24"/>
         </label>
         <label>
           Date:
@@ -52,9 +66,10 @@ class FlightForm extends Component {
         <label>
           Plane:
           <select name="plane" onChange={ this._handleInput } type="text">
+           { planeOptions }
+           // not displaying due to async axios function 
           </select>
         </label>
-
         <input type="submit" value="Save" />
       </form>
       );

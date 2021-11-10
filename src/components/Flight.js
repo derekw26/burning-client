@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import FlightForm from './FlightForm'
 import FlightDisplay from './FlightDisplay'
+
+const FLIGHTS_URL = "http://localhost:3000/flights.json";
 
 class Flight extends Component {
   constructor() {
     super();
     this.state = {
       flightInfo: {
-        flight_no: '',
+        number: '',
         date: '',
         origin: '',
         destination: '',
@@ -16,16 +20,18 @@ class Flight extends Component {
     };
   }
 
-  fetchFlightInfo = (flight) => {
-
-    this.setState({
-      flightInfo: {
-        flight_no: flight.flight_no,
-        date: flight.date,
-        origin: flight.origin,
-        destination: flight.destination,
-        plane: flight.plane
-      }
+  saveFlight(adminInput) {
+    axios.post(FLIGHTS_URL, { flight: adminInput }).then((response) => {
+      const flight = response.data
+      this.setState({
+        flightInfo: {
+          number: flight.number,
+          date: flight.date,
+          origin: flight.origin,
+          destination: flight.destination,
+          plane: flight.plane
+        }
+      })
     })
   }
 
@@ -33,7 +39,7 @@ class Flight extends Component {
     return (
       <div>
         <h1>Create Flights</h1>
-        <FlightForm onSubmit={ this.fetchFlightInfo }/>
+        <FlightForm onSubmit={ this.saveFlight }/>
         <FlightDisplay flightInfo={ this.state.flightInfo }/>
       </div>
     )

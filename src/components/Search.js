@@ -19,7 +19,7 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    axios.get(FLIGHTS_URL).then((response) => {
+    axios(FLIGHTS_URL).then((response) => {
       const flights = response.data;
       console.log(flights)
       this.setState({flights: flights});
