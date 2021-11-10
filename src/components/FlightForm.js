@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
 
 class FlightForm extends Component {
   constructor() {
     super();
     this.state = {
-      flight_no: '',
+      number: '',
       date: '',
       origin: '',
       destination: '',
@@ -30,12 +33,26 @@ class FlightForm extends Component {
     this.props.onSubmit(this.state);
   }
 
+
+
+
   render() {
+
+    componentDidMount() {
+      axios(AIRPLANES_URL).then((response) => {
+        const flights = response.data;
+        console.log(flights)
+        this.setState({flights: flights});
+        // gets all the flight JSON data from server to display
+      })
+    }
+
+
     return (
       <form onSubmit={ this._handleSubmit }>
         <label>
           Flight Number:
-          <input name="flight_no" onChange={ this._handleInput } type="number" required placeholder="e.g. 24"/>
+          <input name="number" onChange={ this._handleInput } type="number" required placeholder="e.g. 24"/>
         </label>
         <label>
           Date:
@@ -52,6 +69,7 @@ class FlightForm extends Component {
         <label>
           Plane:
           <select name="plane" onChange={ this._handleInput } type="text">
+            // need to axios airplanes json from server and iterate through names
           </select>
         </label>
 

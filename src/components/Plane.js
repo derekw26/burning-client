@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import PlaneForm from './PlaneForm'
 import PlaneDisplay from './PlaneDisplay'
+
+const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
 
 class Plane extends Component {
   constructor() {
@@ -12,16 +16,19 @@ class Plane extends Component {
         columns: 0
       }
     };
+    this.savePlane = this.savePlane.bind(this);
   }
 
-  fetchPlaneInfo = (plane) => {
-
-    this.setState({
-      planeInfo: {
-        name: plane.name,
-        rows: plane.rows,
-        columns: plane.columns
-      }
+  savePlane(adminInput) {
+    axios.post(AIRPLANES_URL, { airplane: adminInput }).then((response) => {
+      const plane = response.data
+      this.setState({
+        planeInfo: {
+          name: plane.name,
+          rows: plane.rows,
+          columns: plane.columns
+        }
+      })
     })
   }
 
@@ -29,7 +36,7 @@ class Plane extends Component {
     return (
       <div>
         <h1>Create Planes</h1>
-        <PlaneForm onSubmit={ this.fetchPlaneInfo }/>
+        <PlaneForm onSubmit={ this.savePlane }/>
         <PlaneDisplay planeInfo={ this.state.planeInfo }/>
       </div>
     )
