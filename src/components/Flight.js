@@ -15,9 +15,10 @@ class Flight extends Component {
         date: '',
         origin: '',
         destination: '',
-        plane: ''
+        airplane_id: ''
       }
     };
+    this.saveFlight = this.saveFlight.bind(this);
   }
 
   saveFlight(adminInput) {
@@ -29,7 +30,7 @@ class Flight extends Component {
           date: flight.date,
           origin: flight.origin,
           destination: flight.destination,
-          plane: flight.plane
+          airplane_id: flight.airplane_id
         }
       })
     })

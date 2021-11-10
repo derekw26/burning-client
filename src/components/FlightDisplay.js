@@ -8,7 +8,7 @@ const FlightDisplay = (props) => {
     <div>
       <ul>
         <li>
-          Flight Number: { flight.flight_no }
+          Flight Number: { flight.number }
         </li>
         <li>
           Date: { flight.date }
@@ -20,7 +20,7 @@ const FlightDisplay = (props) => {
           Destination: { flight.destination }
         </li>
         <li>
-          Plane: { flight.plane }
+          Plane: { flight.airplane_id }
         </li>
       </ul>
     </div>
