@@ -28,7 +28,7 @@ class Plane extends Component {
   render() {
     return (
       <div>
-        <h1>Burning Airlines</h1>
+        <h1>Create Planes</h1>
         <PlaneForm onSubmit={ this.fetchPlaneInfo }/>
         <PlaneDisplay planeInfo={ this.state.planeInfo }/>
       </div>
