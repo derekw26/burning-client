@@ -8,13 +8,11 @@ class Navbar extends Component{
       <div>
         <ul>
             <Link to="/"><li>Home</li></Link>
-            <Link to="/flights"><li>Flights</li></Link>
-            <Link to="/Search"><li> Book Now</li></Link>
-
+            <Link to="/flights"><li>Create Flight</li></Link>
+            <Link to="/planes"><li>Create Plane</li></Link>
+            <Link to="/search"><li> Book Now</li></Link>
 
         </ul>
-
-
       </div>
 
     )
