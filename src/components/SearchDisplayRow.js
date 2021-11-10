@@ -14,6 +14,7 @@ class SearchDisplayRow extends Component {
         <td>{this.props.origin}</td>
         <td>{this.props.destination}</td>
         <td>{this.props.plane}</td>
+        <button type="submit">Book Flight</button>
       </tr>
     )
   }
