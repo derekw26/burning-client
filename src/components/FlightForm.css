@@ -1,3 +1,9 @@
 label {
     margin-left: 30px;
 }
+.btn .btn-primary {
+    margin-right: 20px;
+}
+div {
+    display: inline;
+}

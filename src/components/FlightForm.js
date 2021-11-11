@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./FlightForm.css";
 
-const AIRPLANES_URL = "https://burningair.herokuapp.com/airplanes.json";
+const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
 
 
 class FlightForm extends Component {
@@ -38,7 +39,7 @@ class FlightForm extends Component {
   componentDidMount() {
     axios(AIRPLANES_URL).then((response) => {
       let planes = response.data.map( (plane, i) => (<option key={i} value={ plane.id }>{ plane.name }</option>) );
-      this.setState({ planeOptions: planes });
+      this.setState({planeOptions: planes });
     });
   }
 
@@ -69,7 +70,9 @@ class FlightForm extends Component {
             { this.state.planeOptions }
           </select>
         </label>
+        <div class="ms-2">
         <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
       </form>
       );
   }
