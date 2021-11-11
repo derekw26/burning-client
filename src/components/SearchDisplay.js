@@ -10,13 +10,14 @@ class SearchDisplay extends Component {
 
   render() {
 
-    const rows = [];
+    let rows = [];
     const flights = this.props.flights;
     const query = this.props.query;
 
     flights.forEach((flight) => {
 
-      if ( (query.origin === flight.origin && query.destination === flight.destination) ||
+
+    if ( (flight.origin.includes(query.origin)  && flight.destination.includes(query.destination) ) ||
       (query.origin === flight.origin && query.destination === '') ||
       (query.origin === '' && query.destination === flight.destination) ) {
         rows.push(
