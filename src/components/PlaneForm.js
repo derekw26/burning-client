@@ -44,7 +44,7 @@ class PlaneForm extends Component {
           <input name="columns" onChange={ this._handleInput } type="number" required placeholder="e.g. 50"/>
         </label>
 
-        <input type="submit" value="Save" />
+        <input type="submit" value="Create Plane" />
       </form>
       );
   }

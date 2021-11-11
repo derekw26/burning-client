@@ -4,7 +4,7 @@ import axios from 'axios';
 import FlightForm from './FlightForm'
 import FlightDisplay from './FlightDisplay'
 
-const FLIGHTS_URL = "http://localhost:3000/flights.json";
+const FLIGHTS_URL = "https://burningair.herokuapp.com/flights.json";
 
 class Flight extends Component {
   constructor() {

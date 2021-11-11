@@ -4,8 +4,8 @@ import axios from 'axios';
 import PlaneForm from './PlaneForm'
 import PlaneDisplay from './PlaneDisplay'
 
-const SERVER_URL = 'http://localhost:3000/planes.json';
-const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
+const SERVER_URL = 'https://burningair.herokuapp.com/planes.json';
+const AIRPLANES_URL = "https://burningair.herokuapp.com/airplanes.json";
 
 class Plane extends Component {
   constructor() {

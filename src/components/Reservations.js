@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const FLIGHT_SERVER_URL = 'http://localhost:3000/flights.json';
+const FLIGHT_SERVER_URL = 'https://burningair.herokuapp.com/flights.json';
 
 
 class Reservations extends React.Component {
