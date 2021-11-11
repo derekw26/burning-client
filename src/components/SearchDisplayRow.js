@@ -16,7 +16,7 @@ handleClick = () => {
   render() {
     return (
       <div>
-      <tr>
+      <tr class="table-info">
         <td>{this.props.date}</td>
         <td>{this.props.flight_number}</td>
         <td>{this.props.origin}</td>
@@ -26,14 +26,9 @@ handleClick = () => {
 
       </tr>
 
-<<<<<<< HEAD
    <div>
 
 <Link className="nav-link" to="/Reservations">BooK nOW</Link>
-=======
-      <div className="buttonThing" onClick={this.handleClick}>
-      <a href="./reservations">Reservations</a>
->>>>>>> a4089f5ff7a8196cc86b4db51ba2dada5f433a44
       </div>
 </div>
     )

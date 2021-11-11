@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchDisplayRow from './SearchDisplayRow';
+import "./SearchDisplay.css"
 
 class SearchDisplay extends Component {
 
