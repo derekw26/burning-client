@@ -7,6 +7,12 @@ import Reservations from './Reservations'
 
 class SearchDisplayRow extends Component {
 
+  state = {clicked: false }
+
+handleClick = () => {
+    this.setState({clicked: this.state.clicked})
+}
+
   render() {
     return (
       <div>
@@ -20,9 +26,14 @@ class SearchDisplayRow extends Component {
 
       </tr>
 
+<<<<<<< HEAD
    <div>
 
 <Link className="nav-link" to="/Reservations">BooK nOW</Link>
+=======
+      <div className="buttonThing" onClick={this.handleClick}>
+      <a href="./reservations">Reservations</a>
+>>>>>>> a4089f5ff7a8196cc86b4db51ba2dada5f433a44
       </div>
 </div>
     )
