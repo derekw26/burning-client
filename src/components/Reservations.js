@@ -14,17 +14,18 @@ class Reservations extends React.Component {
 
   constructor() {
     super();
+
       this.state = {
         flight_id: 2,
       seat: [
-        'Front1','Front2','Front3',
-        'Middle1','Middle2','Middle3',
-        'Back1','Back2','Back3'
+        'A1','A2','A3',
+        'B1','B2','B3',
+        'C1','C2','C3'
       ],
       seatAvailable: [
-        'Front1','Front2','Front3',
-        'Middle1','Middle2','Middle3',
-        'Back1','Back2','Back3'
+        'A1','A2','A3',
+        'B1','B2','B3',
+        'C1','C2','C3'
       ],
       seatReserved: []
     }
@@ -46,10 +47,11 @@ class Reservations extends React.Component {
     }
   }
 
+
   render() {
     return (
       <div>
-        <h1>Seat Reservation System</h1>
+        <h1>Booking System</h1>
         <DrawGrid
           seat = { this.state.seat }
           available = { this.state.seatAvailable }
@@ -62,6 +64,14 @@ class Reservations extends React.Component {
 }
 
 class DrawGrid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.sayHello = this.sayHello.bind(this);
+  }
+  sayHello() {
+    alert('Yay , Good to go !');
+  }
+
   render() {
     return (
        <div className="container">
@@ -76,7 +86,7 @@ class DrawGrid extends React.Component {
               </tr>
           </tbody>
         </table>
-        <button className="seat-button">submit</button>
+        <button onClick={this.sayHello}>Book </button>
 
         <AvailableList available = { this.props.available } />
         <ReservedList reserved = { this.props.reserved } />
@@ -88,6 +98,9 @@ class DrawGrid extends React.Component {
     this.props.onClickData(seat);
   }
 }
+
+
+
 
 class AvailableList extends React.Component {
   render() {
