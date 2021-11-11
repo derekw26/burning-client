@@ -20,12 +20,16 @@ class Reservations extends React.Component {
       seat: [
         'A1','A2','A3',
         'B1','B2','B3',
-        'C1','C2','C3'
+        'C1','C2','C3',
+        'D1','D2','D3'
+
       ],
       seatAvailable: [
         'A1','A2','A3',
         'B1','B2','B3',
-        'C1','C2','C3'
+        'C1','C2','C3',
+        'D1','D2','D3'
+
       ],
       seatReserved: []
     }
@@ -86,13 +90,9 @@ class DrawGrid extends React.Component {
               </tr>
           </tbody>
         </table>
-<<<<<<< HEAD
-        <button onClick={this.sayHello}>Book </button>
-
-=======
+        <div class="middle">
         <button class="btn btn-primary" onClick={this.sayHello}>Book </button>
->>>>>>> 278959eaf6251a2ddcd14b3e28e547701ccdc3ad
-
+         </div>
         <AvailableList available = { this.props.available } />
         <ReservedList reserved = { this.props.reserved } />
        </div>
