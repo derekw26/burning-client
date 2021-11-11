@@ -86,11 +86,9 @@ class DrawGrid extends React.Component {
               </tr>
           </tbody>
         </table>
-<<<<<<< HEAD
+
         <button onClick={this.sayHello}>Book </button>
-=======
-        <button className="seat-button" class="btn btn-primary">submit</button>
->>>>>>> c25044cf31c953b62bae21007db6e00ed4026c3f
+
 
         <AvailableList available = { this.props.available } />
         <ReservedList reserved = { this.props.reserved } />

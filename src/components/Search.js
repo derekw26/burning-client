@@ -21,7 +21,7 @@ class Search extends Component {
   componentDidMount() {
     axios(FLIGHTS_URL).then((response) => {
       const flights = response.data;
-      console.log(flights)
+
       this.setState({flights: flights});
       // gets all the flight JSON data from server to display
     })
@@ -36,12 +36,22 @@ class Search extends Component {
     })
   }
 
+  filterQuery = (q) => {
+    this.setState({
+      query: {
+        origin: q.origin,
+        destination: q.destination
+      }
+    })
+  }
+
+
   render() {
 
     return (
       <div>
         <h1>Search for Flights</h1>
-        <SearchForm onSubmit={ this.fetchQuery }/>
+        <SearchForm onSubmit={ this.fetchQuery } onChange={ this.filterQuery }/>
         <SearchDisplay flights={ this.state.flights } query={ this.state.query }/>
       </div>
     )

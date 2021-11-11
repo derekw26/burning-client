@@ -18,8 +18,8 @@ class SearchDisplay extends Component {
 
 
     if ( (flight.origin.includes(query.origin)  && flight.destination.includes(query.destination) ) ||
-      (query.origin === flight.origin && query.destination === '') ||
-      (query.origin === '' && query.destination === flight.destination) ) {
+      (flight.origin.includes(query.origin) && query.destination === '') ||
+      (query.origin === '' && flight.destination.includes(query.destination)) ) {
         rows.push(
           <SearchDisplayRow
             flight_number={flight.number}
