@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchDisplayRow from './SearchDisplayRow';
+import "./SearchDisplay.css"
 
 class SearchDisplay extends Component {
 
@@ -31,9 +32,9 @@ class SearchDisplay extends Component {
     });
 
     return (
-      <table>
+      <table class="table-primary">
         <thead>
-          <tr>
+          <tr class="table-info">
             <th>Date</th>
             <th>Flight No.</th>
             <th>From</th>

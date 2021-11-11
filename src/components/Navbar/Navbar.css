@@ -1,0 +1,13 @@
+.NavBarItems {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem
+}
+
+.menu-icon {
+    height: 80px;
+    width: 80px;
+    background-color: red;
+}

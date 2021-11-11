@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./PlaneDisplay.css"
 
 const PlaneDisplay = (props) => {
 
@@ -7,13 +8,13 @@ const PlaneDisplay = (props) => {
   return (
     <div>
       <ul>
-        <li>
+        <li class="list-group-item list-group-item-action active" >
           Name: { plane.name }
         </li>
-        <li>
+        <li class="list-group-item list-group-item-action">
           Rows: { plane.rows }
         </li>
-        <li>
+        <li class="list-group-item list-group-item-action">
           Columns: { plane.columns }
         </li>
       </ul>

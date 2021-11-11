@@ -17,6 +17,8 @@ function App() {
         <Route path = "/"  element={<Search/>} />
         <Route path = "/flights"  element={<Flight/>} />
         <Route path = "/planes"  element={<Plane/>} />
+        <Route path = "/Reservations"  element={<Reservations/>} />
+
       </Routes>
     </Router>
 

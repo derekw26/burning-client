@@ -48,28 +48,28 @@ class FlightForm extends Component {
       <form onSubmit={ this._handleSubmit }>
         <label>
           Flight Number:
-          <input name="number" onChange={ this._handleInput } type="number" required placeholder="e.g. 24"/>
+          <input name="number" class="form-control" onChange={ this._handleInput } type="number" required placeholder="e.g. 24"/>
         </label>
         <label>
           Date:
-          <input name="date" onChange={ this._handleInput } type="date" required placeholder="e.g. 23/06/2021"/>
+          <input name="date" class="form-control" onChange={ this._handleInput } type="date" required placeholder="e.g. 23/06/2021"/>
         </label>
         <label>
           From:
-          <input name="origin" onChange={ this._handleInput } type="text" required placeholder="e.g. Sydney"/>
+          <input name="origin" class="form-control" onChange={ this._handleInput } type="text" required placeholder="e.g. Sydney"/>
         </label>
         <label>
           To:
-          <input name="destination" onChange={ this._handleInput } type="text" required placeholder="e.g. Los Angeles"/>
+          <input name="destination" class="form-control" onChange={ this._handleInput } type="text" required placeholder="e.g. Los Angeles"/>
         </label>
         <label>
           Plane:
-          <select name="airplane_id" onChange={ this._handleInput } type="text" required >
+          <select name="airplane_id" class="form-control" onChange={ this._handleInput } type="text" required >
             <option></option>
             { this.state.planeOptions }
           </select>
         </label>
-        <input type="submit" value="Save Flight" />
+        <input type="submit" class="btn btn-primary" value="Save" />
       </form>
       );
   }
