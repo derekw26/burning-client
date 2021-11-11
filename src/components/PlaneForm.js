@@ -34,15 +34,15 @@ class PlaneForm extends Component {
       <form onSubmit={ this._handleSubmit }>
         <label>
           Name:
-          <input name="name" onChange={ this._handleInput } type="text" required placeholder="e.g. Boeing 787"/>
+          <input name="name" class="form-control" onChange={ this._handleInput } type="text" required placeholder="e.g. Boeing 787"/>
         </label>
         <label>
           Rows:
-          <input name="rows" onChange={ this._handleInput } type="number" required placeholder="e.g. 6"/>
+          <input name="rows" class="form-control" onChange={ this._handleInput } type="number" required placeholder="e.g. 6"/>
         </label>
         <label>
           Columns:
-          <input name="columns" onChange={ this._handleInput } type="number" required placeholder="e.g. 50"/>
+          <input name="columns" class="form-control" onChange={ this._handleInput } type="number" required placeholder="e.g. 50"/>
         </label>
 
         <input type="submit" class="btn btn-primary" value="Create Plane" />
