@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./SearchForm.css"
 
 class SearchForm extends Component {
   constructor() {
@@ -39,7 +40,7 @@ class SearchForm extends Component {
             To:
             <input name="destination" class="form-control" aria-label="Disabled input example" onChange={ this._handleInput } type="text" placeholder="e.g. Los Angeles"/>
           </label>
-          <input type="submit" value="Search for Flights" />
+          <input type="submit" class="btn btn-primary" value="Search for Flights" />
         </form>
       </div>
       );

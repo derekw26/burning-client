@@ -33,14 +33,15 @@ class SearchDisplay extends Component {
     });
 
     return (
-      <table class="table-primary">
+      <table class="table table-striped">
         <thead>
-          <tr class="table-info">
+          <tr class="table-info ">
             <th>Date</th>
             <th>Flight No.</th>
             <th>From</th>
             <th>To</th>
             <th>Plane</th>
+            <th>Book Here</th>
           </tr>
         </thead>
         <tbody> { rows } </tbody>

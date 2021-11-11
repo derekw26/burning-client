@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./PlaneForm.css"
 
 class PlaneForm extends Component {
   constructor() {
@@ -44,7 +45,7 @@ class PlaneForm extends Component {
           <input name="columns" onChange={ this._handleInput } type="number" required placeholder="e.g. 50"/>
         </label>
 
-        <input type="submit" value="Create Plane" />
+        <input type="submit" class="btn btn-primary" value="Create Plane" />
       </form>
       );
   }

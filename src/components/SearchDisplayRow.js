@@ -21,7 +21,7 @@ handleClick = () => {
           <td>{this.props.origin}</td>
           <td>{this.props.destination}</td>
           <td>{this.props.plane}</td>
-          <Link className="nav-link" to="/Reservations">Book Now</Link>
+          <td><Link className="nav-link" to="/Reservations">Book Now</Link></td>
         </tr>
     )
   }
