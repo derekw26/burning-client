@@ -14,7 +14,7 @@ h1 {
   width: 80px;
   height: 50px;
   padding: 50px 30px;
-  border: 2px solid orange;
+  border: 2px solid red;
   text-align: center;
   float: left;
   margin: 5px;
@@ -32,11 +32,11 @@ h1 {
 }
 
 .reserved::after {
-  content: 'RESERVED'
+  content: 'filled'
 }
 
 .available::after {
-  content: 'AVAILABLE'
+  content: 'Get In'
 }
 
 .available {
