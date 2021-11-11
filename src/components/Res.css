@@ -7,16 +7,19 @@ h1 {
 
 .container {
   width: 600px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .grid td {
-  width: 80px;
+  width: 90px;
   height: 50px;
   padding: 50px 30px;
-  border: 2px solid orange;
+  border: 2px solid red;
   text-align: center;
-  float: left;
+<<<<<<< HEAD
+
+=======
+>>>>>>> cf48b64692014b69ae3bef4258c985100710c889
   margin: 5px;
 }
 
@@ -28,15 +31,14 @@ h1 {
 .reserved {
   background: orange;
   color: #fff;
-  display: inline-block;
 }
 
 .reserved::after {
-  content: 'RESERVED'
+  content: 'filled'
 }
 
 .available::after {
-  content: 'AVAILABLE'
+  content: 'Jump'
 }
 
 .available {
@@ -45,4 +47,23 @@ h1 {
 
 li {
   list-style: none;
+}
+.middle .btn{
+   position: relative;
+   left: 600px;
+}
+
+
+.left, .right{
+  text-align: center;
+}
+
+.left ul{
+  position: relative;
+left:350px;
+}
+
+.right ul{
+  position: relative;
+left:350px;
 }
