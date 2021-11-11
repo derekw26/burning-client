@@ -9,10 +9,7 @@ class SearchDisplayRow extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-=======
-      
->>>>>>> 719ffce4d47903d4a4d19ec97cef01321ec468d0
+
         <tr class="table-info">
           <td>{this.props.date}</td>
           <td>{this.props.flight_number}</td>

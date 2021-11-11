@@ -86,25 +86,16 @@ class DrawGrid extends React.Component {
                 { this.props.seat.map( row =>
                   <td
                     className={this.props.reserved.indexOf(row) > -1? 'reserved': 'available'}
-                    key={row} onClick = {e => this.onClickSeat(row)}>{row} 
+                    key={row} onClick = {e => this.onClickSeat(row)}>{row}
                     </td>) }
               </tr>
           </tbody>
         </table>
-<<<<<<< HEAD
 
-        <button onClick={this.sayHello}>Book </button>
-
-=======
-<<<<<<< HEAD
         <div class="middle">
         <button class="btn btn-primary" onClick={this.sayHello}>Book </button>
          </div>
-=======
-        <button class="btn btn-primary" onClick={this.sayHello}>Book </button>
->>>>>>> 719ffce4d47903d4a4d19ec97cef01321ec468d0
 
->>>>>>> cf48b64692014b69ae3bef4258c985100710c889
         <AvailableList available = { this.props.available } />
         <ReservedList reserved = { this.props.reserved } />
        </div>

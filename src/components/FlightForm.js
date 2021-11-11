@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "./FlightForm.css";
 
-const AIRPLANES_URL = "http://localhost:3000/airplanes.json";
+const AIRPLANES_URL = "https://burningair.herokuapp.com/airplanes.json";
 
 
 class FlightForm extends Component {
