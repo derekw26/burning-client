@@ -4,7 +4,7 @@ import axios from 'axios';
 import SearchForm from './SearchForm';
 import SearchDisplay from './SearchDisplay';
 
-const FLIGHTS_URL = "http://localhost:3000/flights.json";
+const FLIGHTS_URL = "https://burningair.herokuapp.com/flights.json";
 
 class Search extends Component {
   constructor() {

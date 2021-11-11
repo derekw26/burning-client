@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchDisplayRow from './SearchDisplayRow';
+import "./SearchDisplay.css"
 
 class SearchDisplay extends Component {
 
@@ -9,13 +10,14 @@ class SearchDisplay extends Component {
 
   render() {
 
-    const rows = [];
+    let rows = [];
     const flights = this.props.flights;
     const query = this.props.query;
 
     flights.forEach((flight) => {
 
-      if ( (query.origin === flight.origin && query.destination === flight.destination) ||
+
+    if ( (flight.origin.includes(query.origin)  && flight.destination.includes(query.destination) ) ||
       (query.origin === flight.origin && query.destination === '') ||
       (query.origin === '' && query.destination === flight.destination) ) {
         rows.push(
@@ -31,14 +33,15 @@ class SearchDisplay extends Component {
     });
 
     return (
-      <table class="table-primary">
+      <table class="table table-striped">
         <thead>
-          <tr class="table-info">
+          <tr class="table-info ">
             <th>Date</th>
             <th>Flight No.</th>
             <th>From</th>
             <th>To</th>
             <th>Plane</th>
+            <th>Book Here</th>
           </tr>
         </thead>
         <tbody> { rows } </tbody>

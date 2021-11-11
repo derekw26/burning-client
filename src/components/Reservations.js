@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const FLIGHT_SERVER_URL = 'http://localhost:3000/flights.json';
+const FLIGHT_SERVER_URL = 'https://burningair.herokuapp.com/flights.json';
 
 
 class Reservations extends React.Component {
@@ -86,7 +86,11 @@ class DrawGrid extends React.Component {
               </tr>
           </tbody>
         </table>
+<<<<<<< HEAD
         <button onClick={this.sayHello}>Book </button>
+=======
+        <button className="seat-button" class="btn btn-primary">submit</button>
+>>>>>>> c25044cf31c953b62bae21007db6e00ed4026c3f
 
         <AvailableList available = { this.props.available } />
         <ReservedList reserved = { this.props.reserved } />
